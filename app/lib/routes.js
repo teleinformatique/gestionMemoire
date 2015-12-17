@@ -4,6 +4,13 @@ Router.configure({
   notFoundTemplate: 'NotFound'
 });
 
+Router.onBeforeAction(function(){
+  if (!Meteor.user()) {
+    this.render('AccessDenied')
+  } else {
+    this.next();
+  }
+});
 
 Router.route('/', {
   name: 'home',
