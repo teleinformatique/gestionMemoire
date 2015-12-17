@@ -18,9 +18,17 @@ Router.route('/insert_memoire',{
   where: 'client'
 });
 
-Router.route('memoires_list',{
+Router.route('/memoires_list',{
   name:'memoiresList',
   controller: 'MemoiresController',
   action: 'list',
   where: 'client'
 });
+
+Router.route('/memoire/:_id',{
+  name:'editMemoire',
+  controller: 'MemoiresController',
+  action: 'edit',
+  where: 'client'
+});
+
