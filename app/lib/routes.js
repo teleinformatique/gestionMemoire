@@ -10,7 +10,7 @@ Router.onBeforeAction(function(){
   } else {
     this.next();
   }
-});
+}, {only:['memoiresList','insertMemoire']});
 
 Router.route('/', {
   name: 'home',
