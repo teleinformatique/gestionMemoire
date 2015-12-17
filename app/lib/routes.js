@@ -10,3 +10,10 @@ Router.route('/', {
   controller: 'HomeController',
   where: 'client'
 });
+
+Router.route('/insert_memoire',{
+  name: 'InsertMemoire',
+  controller: 'MemoiresController',
+  action: 'insert',
+  where: 'client'
+});
