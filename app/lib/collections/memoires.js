@@ -16,9 +16,14 @@ Memoires.attachSchema(new SimpleSchema({
     type: String,
     label: "Année"
   },
-  fichier:{
+  fileId:{
     type: String,
-    max: 500
+    autoform:{
+      afFieldInput:{
+        type: "csf-file",
+        collection: "files"
+      }
+    }
   },
   autheur:{
     type: String,
