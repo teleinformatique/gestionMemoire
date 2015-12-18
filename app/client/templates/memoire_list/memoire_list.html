@@ -1,5 +1,21 @@
 <template name="MemoireList">
-  <div class="memoire-list">
-    <h1>Find me in app/client/templates/memoire_list/memoire_list</h1>
+  <div class="page-header">
+    <h1>Liste <small>mémoires</small></h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      {{#each memoires}}
+        <div class="col-sm-3">
+          <div class="thumbnail ">
+            <img src="/document.png" alt="{{sujet}}" class="thumbnail-min-height">
+            <div class="caption">
+              <h3>{{sujet}}</h3>
+              <p>{{resume}}</p>
+        <p><a href="#" class="btn btn-primary" role="button">Voir</a> <a href="#" class="btn btn-default" role="button">Supprimer</a></p>
+            </div>
+          </div>
+        </div>
+    {{/each}}
+    </div>
   </div>
 </template>
