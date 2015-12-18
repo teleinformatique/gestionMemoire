@@ -1,5 +1,7 @@
 <template name="InsertMemoire">
-  <div class="insert-memoire">
-    <h1>Find me in app/client/templates/insert_memoire/insert_memoire</h1>
-  </div>
+  <div class="page-header">
+  <h1>Upload<small>nouveau mémoire</small></h1>
+</div>
+{{> quickForm collection="Memoires" id="insertMemoireForm" type="insert" omitFields="owner,createdDate" buttonContent="Enregistrer"}}
+  
 </template>
