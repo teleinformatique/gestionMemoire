@@ -16,6 +16,10 @@ Memoires.attachSchema(new SimpleSchema({
     type: String,
     label: "Année"
   },
+  fichier:{
+    type: String,
+    max: 500
+  },
   autheur:{
     type: String,
     label: "Autheur",
