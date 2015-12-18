@@ -25,3 +25,6 @@ accounts-password
 ian:accounts-ui-bootstrap-3
 natestrauser:font-awesome
 twbs:bootstrap
+cfs:autoform
+cfs:standard-packages
+cfs:gridfs
