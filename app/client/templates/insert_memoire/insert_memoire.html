@@ -2,6 +2,18 @@
   <div class="page-header">
   <h1>Upload <small>nouveau mémoire</small></h1>
 </div>
-{{> quickForm collection="Memoires" id="insertMemoireForm" type="insert" omitFields="owner,createdDate" buttonContent="Enregistrer"}}
+<!--{{> quickForm collection="Memoires" id="insertMemoireForm" type="insert" omitFields="owner,createdDate" buttonContent="Enregistrer"}}-->
+
+{{#autoForm id="insertMemoireForm" omitFields="owner,createdDate" collection="Memoires" }}
+  {{> afQuickField name="sujet"}}
+  {{> afQuickField name="resume"}}
+  {{> afQuickField name="annee"}}
+  {{> afQuickField name="autheur"}}
+  {{> afQuickField name="niveau"}}
+  {{> afQuickField name="filiale"}}
+  {{> afQuickField name="fileId" type="cfs-file" collection="files"}}
+  <button type="submit" class="btn btn-primary">Enregistrer</button>
+{{/autoForm}}
+
   
 </template>
