@@ -8,6 +8,9 @@ Template.MemoireList.events({
 /* MemoireList: Helpers */
 /*****************************************************************************/
 Template.MemoireList.helpers({
+    memoires: function(){
+        return Memoires.find();
+    }
 });
 
 /*****************************************************************************/

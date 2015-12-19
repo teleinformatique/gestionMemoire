@@ -19,7 +19,7 @@ Router.route('/', {
 });
 
 Router.route('/insert_memoire',{
-  name: 'InsertMemoire',
+  name: 'insertMemoire',
   controller: 'MemoiresController',
   action: 'insert',
   where: 'client'
