@@ -10,7 +10,7 @@ Template.MemoireList.events({
             if (result && result.url) {
                 
                 window.open(result.url);
-            } else {
+            } else { 
                 console.log('Error on file dowload ' + error);
             }
         });
@@ -29,6 +29,9 @@ Template.MemoireList.helpers({
         console.log(fileId);
         var file = Files.find({_id:fileId});
         return file.url;
+    },
+    confirmMessage: function(){
+      return Session.get('confirmMessage');
     }
     
 });
@@ -44,4 +47,5 @@ Template.MemoireList.onRendered(function () {
 });
 
 Template.MemoireList.onDestroyed(function () {
+    Session.set('confirmMessage',false);
 });

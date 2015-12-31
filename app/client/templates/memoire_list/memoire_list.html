@@ -3,6 +3,9 @@
     <h1>Liste <small>mémoires</small></h1>
   </div>
   <div class="row">
+    {{#if confirmMessage }}
+      {{>ConfirmMessage}}
+    {{/if}}
     <div class="col-sm-12">
       {{#each memoires}}
         <div class="col-sm-3">

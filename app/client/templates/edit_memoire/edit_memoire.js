@@ -4,6 +4,7 @@
 AutoForm.addHooks('editMemoireForm', {
     onSuccess: function(){
         Router.go('memoiresList');
+        Session.set('confirmMessage','Mémoire modifié avec succés');
     }
 })
 /*****************************************************************************/
