@@ -7,6 +7,7 @@ MemoiresController = RouteController.extend({
   
   subscriptions: function() {
     this.subscribe('memoiresByUser', Meteor.userId());
+    this.subscribe('getFiles');
   },
   
   // Subscriptions or other things we want to "wait" on. This also
@@ -24,7 +25,7 @@ MemoiresController = RouteController.extend({
   // return Posts.findOne({_id: this.params._id});
   
   data: function () {
-    return Memoires.findOne({_id:this.params._id});
+    return Memoires.findOne({_id: this.params._id});
   },
   
   // You can provide any of the hook options
@@ -50,7 +51,11 @@ MemoiresController = RouteController.extend({
     this.render('InsertMemoire',{});
   },
   list: function(){
-    this.render('MemoireList',{});
+    this.render('MemoireList',{
+      data: function () {
+        return Memoires.find();
+      }
+    });
   },
   edit: function(){
     this.render('editMemoire',{});

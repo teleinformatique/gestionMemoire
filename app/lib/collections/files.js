@@ -1,10 +1,13 @@
 Files = new FS.Collection("files", {
-  stores: [new FS.Store.GridFS("filesStore")]
+  stores: [new FS.Store.GridFS("files", {})]
 });
 
 Files.allow({
   download: function () {
     return true;
   },
-  fetch: null
+  insert: function(){
+    return true;
+  }
+
 });

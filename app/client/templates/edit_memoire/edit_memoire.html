@@ -1,5 +1,8 @@
-<template name="EditMemoire">
-  <div class="edit-memoire">
-    <h1>Find me in app/client/templates/edit_memoire/edit_memoire</h1>
+<template name="editMemoire">
+  <div class="page-header">
+    <h1>Mémoire <small>modification</small></h1>
   </div>
+  {{> quickForm type="update" collection="Memoires" doc=this id="editMemoireForm" omitFields="createdDate,owner"
+    buttonContent="Mettre à jour" }}
+  {{> quickRemoveButton collection="Memoires" _id=this._id class="btn btn-danger" buttonContent="Supprimer"}}
 </template>

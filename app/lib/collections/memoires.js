@@ -20,8 +20,9 @@ Memoires.attachSchema(new SimpleSchema({
     type: String,
     autoform:{
       afFieldInput:{
-        type: "csf-file",
-        collection: "files"
+        type: "fileUpload",
+        collection: "files",
+        label: "Choisir un fichier"
       }
     }
   },
@@ -57,20 +58,6 @@ Memoires.attachSchema(new SimpleSchema({
 if (Meteor.isServer) {
   Memoires.allow({
     insert: function (userId, doc) {
-      return false;
-    },
-
-    update: function (userId, doc, fieldNames, modifier) {
-      return false;
-    },
-
-    remove: function (userId, doc) {
-      return false;
-    }
-  });
-
-  Memoires.deny({
-    insert: function (userId, doc) {
       return true;
     },
 
@@ -82,4 +69,18 @@ if (Meteor.isServer) {
       return true;
     }
   });
+
+  // Memoires.deny({
+  //   insert: function (userId, doc) {
+  //     return true;
+  //   },
+
+  //   update: function (userId, doc, fieldNames, modifier) {
+  //     return true;
+  //   },
+
+  //   remove: function (userId, doc) {
+  //     return true;
+  //   }
+  // });
 }

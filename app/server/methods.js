@@ -3,7 +3,7 @@
 /*****************************************************************************/
 
 Meteor.methods({
-  'server/method_name': function () {
-    // server method logic
+  getFile: function (idFile) {
+    return Files.findOne({_id:idFile});
   }
 });
