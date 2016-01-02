@@ -9,9 +9,10 @@ MemoiresController = RouteController.extend({
     //this.subscribe('memoiresByUser', Meteor.userId());
     //this.subscribe('getFiles');
     var filtreParFiliale = Session.get('filtreParFiliale');
+    var filtreUser = Session.get('filtreUser');
         if (filtreParFiliale) {
           this.subscribe('memoireParFiliale',filtreParFiliale);
-        }else if(Meteor.userId()){
+        }else if(Meteor.userId() && filtreUser){
           this.subscribe('memoiresByUser', Meteor.userId());
         }
         else {

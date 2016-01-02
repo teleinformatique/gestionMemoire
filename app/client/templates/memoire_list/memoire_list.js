@@ -52,4 +52,5 @@ Template.MemoireList.onRendered(function () {
 Template.MemoireList.onDestroyed(function () {
     Session.set('confirmMessage',false);
     Session.set('filtreParFiliale','');
+    Session.set('filtreUser',false);
 });

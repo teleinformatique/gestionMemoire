@@ -13,8 +13,9 @@
       <div class="collapse navbar-collapse" id="navigationbar">
         <ul class="nav navbar-nav navbar-right">
           <li>{{#linkTo route="home"}}<i class="fa fa-home"></i>   Acceuil{{/linkTo}}</li>
+          <li><a href="#" id='cancel-filtre-user'><i class="fa fa-align-justify"></i>Mémoires</a></li>
           {{#if currentUser}}
-            <li>{{#linkTo route="memoiresList"}}<i class="fa fa-align-justify"></i> Mémoires{{/linkTo}}</li>
+            <li><a href="#" id='filtre-user'><i class="fa fa-align-justify"></i>Mes Mémoires</a></li>
             <li>{{#linkTo route="insertMemoire"}}<i class="fa fa-plus"></i> Uploader un mémoire{{/linkTo}}</li>
           {{/if}}
           <li><div class="nav navbar-nav navbar-right"> {{> loginButtons}}</div></li>
