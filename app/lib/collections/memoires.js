@@ -38,7 +38,7 @@ Memoires.attachSchema(new SimpleSchema({
   },
   filiale:{
     type: String, label: "Filiale",
-    allowedValues: ['Gestion', 'Télécommunication', 'Téléinforamtique']
+    allowedValues: ['Gestion', 'Télécommunication', 'Téléinformatique']
   },
   owner:{
     type: String,

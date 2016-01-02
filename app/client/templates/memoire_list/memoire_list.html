@@ -1,6 +1,6 @@
 <template name="MemoireList">
   <div class="page-header">
-    <h1>Liste <small>mémoires</small></h1>
+    <h1>Liste <small>mémoires {{#if filtreParFiliale}} {{filtreParFiliale}} {{/if}}</small></h1>
   </div>
   <div class="row">
     {{#if confirmMessage }}

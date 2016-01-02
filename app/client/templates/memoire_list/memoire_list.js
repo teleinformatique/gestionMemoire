@@ -32,6 +32,9 @@ Template.MemoireList.helpers({
     },
     confirmMessage: function(){
       return Session.get('confirmMessage');
+    },
+    filtreParFiliale: function(){
+        return Session.get('filtreParFiliale');
     }
     
 });
@@ -48,4 +51,5 @@ Template.MemoireList.onRendered(function () {
 
 Template.MemoireList.onDestroyed(function () {
     Session.set('confirmMessage',false);
+    Session.set('filtreParFiliale','');
 });

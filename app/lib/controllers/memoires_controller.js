@@ -6,8 +6,14 @@ MemoiresController = RouteController.extend({
   // this.subscribe('item', this.params._id).wait();
   
   subscriptions: function() {
-    this.subscribe('memoiresByUser', Meteor.userId());
-    this.subscribe('getFiles');
+    //this.subscribe('memoiresByUser', Meteor.userId());
+    //this.subscribe('getFiles');
+    var filtreParFiliale = Session.get('filtreParFiliale');
+        if (filtreParFiliale) {
+          this.subscribe('memoireParFiliale',filtreParFiliale);
+        } else {
+          this.subscribe('memoiresByUser', Meteor.userId());
+        }
   },
   
   // Subscriptions or other things we want to "wait" on. This also
@@ -16,6 +22,7 @@ MemoiresController = RouteController.extend({
   // return Meteor.subscribe('post', this.params._id);
   
   waitOn: function () {
+    
   },
   
   // A data function that can be used to automatically set the data context for
