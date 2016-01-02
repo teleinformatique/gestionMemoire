@@ -6,7 +6,13 @@ AutoForm.addHooks('editMemoireForm', {
         Router.go('memoiresList');
         Session.set('confirmMessage','Mémoire modifié avec succés');
     }
-})
+});
+AutoForm.addHooks('removeMemoireForm', {
+    onSuccess: function(){
+        Router.go('memoiresList');
+        Session.set('confirmMessage','Mémoire supprimé avec succés');
+    }
+});
 /*****************************************************************************/
 /* EditMemoire: Event Handlers */
 /*****************************************************************************/
@@ -16,7 +22,16 @@ Template.EditMemoire.events({
 /*****************************************************************************/
 /* EditMemoire: Helpers */
 /*****************************************************************************/
-Template.EditMemoire.helpers({
+Template.editMemoire.helpers({
+    beforeRemove: function(){
+        return function (collection, id) {
+            var doc = collection.findOne(id);
+            if (confirm("Confirmer la suppresion du mémoire: " + doc.sujet + "?")) {
+                this.remove();
+                Router.go("memoiresList");
+      }
+    };
+    }
 });
 
 /*****************************************************************************/
