@@ -11,8 +11,11 @@ MemoiresController = RouteController.extend({
     var filtreParFiliale = Session.get('filtreParFiliale');
         if (filtreParFiliale) {
           this.subscribe('memoireParFiliale',filtreParFiliale);
-        } else {
+        }else if(Meteor.userId()){
           this.subscribe('memoiresByUser', Meteor.userId());
+        }
+        else {
+          this.subscribe('getAllMemoires');
         }
   },
   

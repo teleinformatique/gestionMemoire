@@ -10,3 +10,7 @@ Meteor.publish('memoireParFiliale', function(filtreParFiliale){
     return Memoires.find({filiale: filtreParFiliale});
 });
 
+Meteor.publish('getAllMemoires',function(){
+    return Memoires.find({});
+});
+
